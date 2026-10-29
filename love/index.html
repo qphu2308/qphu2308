@@ -1,1 +1,1530 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Phú ♡ Hân</title></head><body style="background:#ffe7f1;font:18px system-ui;text-align:center;padding:60px"><h1>Phú ♡ Hân</h1><p>Một trang nhỏ dành cho Gia Hân 💗</p></body></html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#ffdce8" />
+<title>Phú ♡ za Hân — Một tình yêu thật gần</title>
+<style>
+:root{
+  --bg1:#fff6f9;
+  --bg2:#ffeaf2;
+  --bg3:#fff2eb;
+  --pink:#ff6f9f;
+  --pink2:#e74f86;
+  --deep:#8f3157;
+  --text:#6c4758;
+  --white:#ffffff;
+  --soft:#fffafb;
+  --line:#ffd1df;
+  --shadow:0 18px 60px rgba(215,91,133,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--text);
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  background:
+  radial-gradient(circle at 15% 20%, #ffe2ed 0, transparent 22%),
+  radial-gradient(circle at 85% 25%, #ffe6ef 0, transparent 20%),
+  radial-gradient(circle at 20% 80%, #fff0d8 0, transparent 24%),
+  linear-gradient(135deg,var(--bg1),var(--bg2) 48%,var(--bg3));
+  overflow-x:hidden;
+}
+body.no-scroll{overflow:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+img{max-width:100%}
+.hidden{display:none!important}
+
+#loader{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,#fff4f8,#ffe7ef,#fff5ee);
+  transition:opacity .8s ease, visibility .8s ease;
+}
+#loader.hide{opacity:0;visibility:hidden}
+.loader-card{
+  text-align:center; padding:32px 28px; width:min(92%,500px);
+  background:#ffffffcf; backdrop-filter:blur(14px);
+  border:1px solid #fff; border-radius:28px; box-shadow:var(--shadow);
+}
+.loader-heart{font-size:3.6rem; animation:heartbeat 1.3s infinite}
+.loader-title{
+  margin:12px 0 10px; font:500 clamp(2rem,5vw,3rem)/1.05 Georgia,serif;
+  color:#bf3e70;
+}
+.loader-sub{line-height:1.8; color:#8a6274}
+.loading-bar{
+  margin:24px auto 10px; width:90%; height:10px; border-radius:999px;
+  background:#ffe0ea; overflow:hidden;
+}
+.loading-fill{
+  height:100%; width:0%;
+  background:linear-gradient(90deg,#ff8cb2,#ea5b90,#ffb2c9);
+  border-radius:999px;
+  animation:loadBar 2.9s ease forwards;
+}
+@keyframes loadBar{to{width:100%}}
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  20%{transform:scale(1.12)}
+  40%{transform:scale(1)}
+  60%{transform:scale(1.08)}
+}
+@keyframes floatY{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+#fx-layer, #sparkle-layer, #star-layer{
+  position:fixed; inset:0; pointer-events:none;
+}
+#fx-layer{z-index:1; overflow:hidden}
+#star-layer{z-index:0; opacity:.8}
+#sparkle-layer{z-index:15; overflow:hidden}
+.particle{
+  position:absolute; bottom:-60px; color:#ff7aa6; opacity:.72;
+  animation:rise linear forwards;
+  filter:drop-shadow(0 3px 10px rgba(255,109,155,.25));
+}
+@keyframes rise{
+  to{transform:translateY(-120vh) rotate(50deg); opacity:0}
+}
+.spark{
+  position:absolute; width:8px; height:8px;
+  background:radial-gradient(circle,#fff 0,#ffd6e4 40%,#ff8cb2 75%,transparent 76%);
+  border-radius:50%;
+  animation:sparkle .85s ease-out forwards;
+}
+@keyframes sparkle{
+  from{transform:translate(0,0) scale(.5); opacity:1}
+  to{transform:translate(var(--tx),var(--ty)) scale(1.7); opacity:0}
+}
+.cursor-glow{
+  position:fixed; width:260px; height:260px; border-radius:50%;
+  background:radial-gradient(circle,rgba(255,138,183,.17),transparent 70%);
+  pointer-events:none; transform:translate(-50%,-50%); z-index:0;
+}
+nav{
+  position:fixed; top:14px; left:50%; transform:translateX(-50%);
+  width:min(94%,930px); z-index:30;
+  padding:10px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;
+  background:rgba(255,255,255,.64); border:1px solid rgba(255,255,255,.92);
+  backdrop-filter:blur(16px); border-radius:999px; box-shadow:0 10px 30px rgba(196,93,128,.12);
+}
+nav a{
+  padding:10px 15px; border-radius:999px; font-size:.9rem;
+  transition:.25s; color:#7b5263;
+}
+nav a:hover{background:#ffe5ef; color:#bf3e70; transform:translateY(-2px)}
+.music-btn{
+  position:fixed; right:18px; bottom:18px; z-index:35;
+  border:none; border-radius:999px; padding:12px 17px;
+  background:linear-gradient(135deg,#ff8cb2,#e8558d); color:#fff;
+  box-shadow:0 14px 35px rgba(231,79,134,.3);
+}
+.music-btn:hover{transform:translateY(-2px)}
+main, footer {position:relative; z-index:2}
+.hero{
+  min-height:100svh; display:grid; place-items:center;
+  padding:112px 22px 70px; position:relative; text-align:center;
+}
+.hero::before,.hero::after{
+  content:""; position:absolute; border-radius:50%; filter:blur(15px); z-index:-1;
+}
+.hero::before{width:250px;height:250px;left:-40px;top:18%;background:#ffd9e7a0;animation:floatY 6s ease-in-out infinite}
+.hero::after{width:290px;height:290px;right:-60px;bottom:12%;background:#ffeed8a8;animation:floatY 8s ease-in-out infinite}
+.hero-card{
+  width:min(980px,100%);
+  background:rgba(255,255,255,.52);
+  border:1px solid rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);
+  border-radius:36px; box-shadow:var(--shadow);
+  padding:42px 26px 34px;
+}
+.hero-badge{
+  display:inline-flex; align-items:center; gap:8px;
+  background:#fff8fb; border:1px solid #ffd1df; color:#bb4171;
+  padding:10px 16px; border-radius:999px; font-size:.88rem; letter-spacing:.03em;
+}
+.hero h1{
+  margin:22px auto 18px;
+  font:500 clamp(3rem,8vw,6.2rem)/.97 Georgia,serif;
+  letter-spacing:-.06em; color:#b73768; max-width:900px;
+}
+.hero h1 span{display:block; color:#f07aa2; font-style:italic}
+.hero .lead{
+  max-width:760px; margin:0 auto; line-height:1.95;
+  font-size:clamp(1rem,2.4vw,1.16rem); color:#7b5666;
+}
+.hero-actions{
+  margin-top:30px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border:none; border-radius:999px; padding:14px 23px; transition:.28s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.primary{
+  color:#fff; background:linear-gradient(135deg,#ff8cb2,#e55089);
+  box-shadow:0 14px 30px rgba(229,80,137,.24);
+}
+.btn.secondary{
+  color:#a33d68; background:#ffffffcc; border:1px solid #ffd0de;
+}
+.hero-couple-photo{
+  width:min(360px,88%); margin:26px auto 0; padding:9px;
+  border-radius:28px; background:linear-gradient(135deg,#fff,#ffd2e1,#fff4f8);
+  box-shadow:0 18px 42px rgba(190,68,113,.2); position:relative;
+  animation:photoFloat 5s ease-in-out infinite;
+}
+.hero-couple-photo img{
+  display:block; width:100%; max-height:390px; object-fit:cover; object-position:center 43%;
+  border-radius:21px; border:1px solid #ffffff;
+}
+.hero-photo-caption{
+  padding:11px 6px 4px; text-align:center; color:#b83f70;
+  font:italic 1.05rem Georgia,serif;
+}
+.hero-photo-caption span{color:#f078a2; padding:0 6px}
+@keyframes photoFloat{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-6px) rotate(.4deg)}}
+.hero-mini{
+  margin-top:28px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+}
+.mini-card{
+  min-width:170px; padding:16px 18px; border-radius:20px;
+  background:#ffffffb8; border:1px solid #fff; box-shadow:0 10px 25px rgba(186,87,123,.08);
+}
+.mini-card strong{display:block; color:#c24a7b; font-size:1.18rem; margin-bottom:6px}
+.mini-card span{font-size:.9rem; color:#896474}
+.scroll-hint{
+  position:absolute; bottom:18px; font-size:.78rem;
+  letter-spacing:.14em; text-transform:uppercase; color:#bf829b;
+}
+.scroll-hint::after{
+  content:"↓"; display:block; font-size:1.25rem; margin-top:7px;
+  animation:bounce 1.2s infinite;
+}
+@keyframes bounce{50%{transform:translateY(6px)}}
+
+section{padding:90px 22px; scroll-margin-top:90px}
+.section-inner{max-width:1100px; margin:auto}
+.section-head{text-align:center; max-width:760px; margin:0 auto 40px}
+.kicker{
+  color:#d25184; font-size:.78rem; text-transform:uppercase;
+  letter-spacing:.2em; font-weight:700;
+}
+h2{
+  margin:13px 0 15px;
+  font:500 clamp(2.2rem,5vw,3.8rem)/1.08 Georgia,serif;
+  color:#a73866; letter-spacing:-.04em;
+}
+.section-head p{line-height:1.9; color:#805f6f}
+
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .85s ease, transform .85s ease}
+.reveal.visible{opacity:1; transform:translateY(0)}
+
+.letter-wrapper{
+  display:grid; grid-template-columns:1.1fr .9fr; gap:20px;
+}
+.paper{
+  background:#fffefdd9; border:1px solid #fff; border-radius:28px;
+  box-shadow:var(--shadow); padding:clamp(24px,4vw,46px); position:relative;
+}
+.paper::before{
+  content:"♡"; position:absolute; top:10px; right:22px;
+  color:#ffd2e1; font-size:3.5rem; transform:rotate(10deg);
+}
+.paper p{font:1.06rem/2.02 Georgia,serif; color:#6e4b5d; margin:0 0 16px}
+.signature{
+  margin-top:18px; text-align:right; color:#cc4e80;
+  font:italic 1.45rem/1.5 Georgia,serif;
+}
+.side-stack{display:grid; gap:20px}
+.glass-card{
+  background:#ffffffbf; border:1px solid #fff; border-radius:25px;
+  box-shadow:0 14px 32px rgba(193,88,125,.1); padding:24px;
+}
+.glass-card h3{margin:0 0 12px; color:#b73a69}
+.glass-card p{margin:0; line-height:1.8; color:#826272}
+
+.stat-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+}
+.stat{
+  background:linear-gradient(180deg,#ffffffda,#fff6fa);
+  border:1px solid #fff; border-radius:24px; box-shadow:0 12px 30px rgba(193,88,125,.08);
+  padding:24px; text-align:center;
+}
+.stat .num{
+  font:600 clamp(2rem,5vw,3rem)/1 "Segoe UI",sans-serif; color:#d34b80;
+}
+.stat .label{margin-top:8px; color:#855f6f; line-height:1.6}
+
+.promise-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+}
+.promise-card{
+  position:relative; overflow:hidden;
+  background:#ffffffc8; border:1px solid #fff; border-radius:24px;
+  padding:26px 22px; box-shadow:0 12px 34px rgba(187,82,120,.1);
+  transition:transform .32s, box-shadow .32s;
+}
+.promise-card::after{
+  content:""; position:absolute; width:160px; height:160px; border-radius:50%;
+  right:-60px; top:-60px; background:radial-gradient(circle,#ffe4ee,transparent 70%);
+}
+.promise-card:hover{transform:translateY(-8px) rotate(-.4deg); box-shadow:0 22px 42px rgba(187,82,120,.15)}
+.promise-card .icon{font-size:1.9rem; display:inline-block; margin-bottom:10px}
+.promise-card h3{margin:0 0 9px; color:#b23b68; font-size:1.08rem}
+.promise-card p{margin:0; line-height:1.78; color:#80606f; font-size:.96rem}
+
+.thanks-layout{
+  display:grid; grid-template-columns:.95fr 1.05fr; gap:18px; align-items:stretch;
+}
+.note-box, .heart-box{
+  background:#ffffffbf; border:1px solid #fff; border-radius:28px;
+  padding:28px; box-shadow:var(--shadow);
+}
+.note-box ul{padding-left:20px; margin:12px 0 0}
+.note-box li{margin:10px 0; line-height:1.75}
+.big-quote{
+  display:flex; align-items:center; justify-content:center; min-height:100%;
+  text-align:center; font:italic 1.35rem/1.9 Georgia,serif; color:#b54473;
+  background:
+    radial-gradient(circle at top left,#fff6f9,#ffffff 55%),
+    linear-gradient(135deg,#fffafd,#fff6fb);
+}
+.big-quote span{max-width:420px}
+
+.gallery{
+  display:grid; grid-template-columns:1.2fr .8fr; gap:18px;
+}
+.photo-slot{
+  position:relative; overflow:hidden;
+  min-height:250px; border:2px dashed #f2a8c2; border-radius:25px;
+  background:linear-gradient(145deg,#fffafd,#ffeaf2);
+  display:grid; place-items:center; padding:24px; text-align:center;
+  transition:.25s;
+}
+.photo-slot:hover{transform:translateY(-4px); border-color:#e45f92}
+.photo-slot.tall{min-height:450px}
+.photo-slot img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:none}
+.photo-slot.has-image img{display:block}
+.memory-caption{
+  position:absolute; left:0; right:0; bottom:0; z-index:2; pointer-events:none;
+  padding:34px 16px 15px; color:#fff; text-align:center;
+  font:italic 1.05rem Georgia,serif;
+  background:linear-gradient(transparent,rgba(75,28,48,.68));
+  text-shadow:0 1px 5px rgba(0,0,0,.3);
+}
+.photo-slot.has-image input{z-index:4}
+.photo-slot.has-image .placeholder{display:none}
+.photo-slot input{position:absolute; inset:0; opacity:0; cursor:pointer}
+.placeholder .big{font-size:3rem; display:block; margin-bottom:8px}
+.placeholder strong{display:block; margin-bottom:8px; color:#b33e6b}
+.placeholder small{line-height:1.6; color:#9a7284}
+.gallery-note{text-align:center; color:#916b7c; font-size:.9rem; margin-top:14px}
+.trip-gallery{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;
+}
+.trip-photo{
+  position:relative; overflow:hidden; min-height:360px; border-radius:26px;
+  background:#ffeaf2; border:1px solid #fff; box-shadow:0 16px 38px rgba(187,82,120,.14);
+  transition:transform .32s, box-shadow .32s;
+}
+.trip-photo:hover{transform:translateY(-7px); box-shadow:0 22px 45px rgba(187,82,120,.2)}
+.trip-photo img{display:block; width:100%; height:100%; min-height:360px; object-fit:cover; transition:transform .65s}
+.trip-photo:hover img{transform:scale(1.045)}
+.trip-photo .trip-caption{
+  position:absolute; inset:auto 0 0; padding:42px 18px 20px; color:#fff;
+  background:linear-gradient(transparent,rgba(52,20,38,.78));
+  text-shadow:0 2px 8px rgba(0,0,0,.22);
+}
+.trip-caption strong{display:block; font:italic 1.25rem Georgia,serif; margin-bottom:7px}
+.trip-caption span{font-size:.9rem; line-height:1.6; opacity:.95}
+.trip-date{
+  display:inline-block; padding:8px 14px; border-radius:999px;
+  border:1px solid #ffd1df; background:#fff9fc; color:#b73d6d;
+  font-size:.86rem; margin-bottom:16px;
+}
+.study-gallery{
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px;
+}
+.study-photo{
+  position:relative; min-height:390px; overflow:hidden; border-radius:28px;
+  background:#ffeaf2; border:1px solid #fff; box-shadow:0 16px 38px rgba(187,82,120,.14);
+  transition:transform .32s, box-shadow .32s;
+}
+.study-photo:hover{transform:translateY(-6px);box-shadow:0 22px 45px rgba(187,82,120,.2)}
+.study-photo img{display:block;width:100%;height:100%;min-height:390px;object-fit:cover;transition:transform .7s}
+.study-photo:hover img{transform:scale(1.035)}
+.study-photo .study-caption{
+  position:absolute;inset:auto 0 0;padding:46px 20px 22px;color:#fff;
+  background:linear-gradient(transparent,rgba(43,20,35,.78));
+  text-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.study-caption strong{display:block;font:italic 1.3rem Georgia,serif;margin-bottom:8px}
+.study-caption span{font-size:.94rem;line-height:1.75;display:block}
+.distance-note{
+  max-width:820px;margin:24px auto 0;padding:25px 28px;text-align:center;
+  background:#ffffffc7;border:1px solid #fff;border-radius:25px;
+  box-shadow:0 12px 30px rgba(187,82,120,.09);
+  font:italic 1.12rem/1.9 Georgia,serif;color:#a63c69;
+}
+@media(max-width:760px){.study-gallery{grid-template-columns:1fr}.study-photo,.study-photo img{min-height:350px}}
+.zoo-memory-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;
+}
+.zoo-memory-card{
+  position:relative;overflow:hidden;min-height:380px;border-radius:28px;
+  background:#f7e8ee;border:1px solid #fff;
+  box-shadow:0 16px 38px rgba(187,82,120,.14);
+  transition:transform .32s,box-shadow .32s;
+}
+.zoo-memory-card:hover{transform:translateY(-6px);box-shadow:0 22px 45px rgba(187,82,120,.2)}
+.zoo-memory-card img{
+  display:block;width:100%;height:100%;min-height:380px;object-fit:cover;
+  transition:transform .7s;
+}
+.zoo-memory-card:hover img{transform:scale(1.04)}
+.zoo-memory-card .zoo-memory-caption{
+  position:absolute;inset:auto 0 0;padding:48px 20px 22px;color:#fff;
+  background:linear-gradient(transparent,rgba(34,28,26,.8));
+  text-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.zoo-memory-caption strong{display:block;font:italic 1.28rem Georgia,serif;margin-bottom:8px}
+.zoo-memory-caption span{display:block;font-size:.94rem;line-height:1.75}
+.zoo-memory-date{
+  display:inline-block;padding:8px 14px;border-radius:999px;
+  border:1px solid #cfe4d3;background:#f7fff8;color:#3f7850;
+  font-size:.88rem;margin-bottom:18px;
+}
+.zoo-memory-note{
+  max-width:850px;margin:25px auto 0;padding:25px 28px;text-align:center;
+  background:#ffffffc9;border:1px solid #fff;border-radius:25px;
+  box-shadow:0 12px 30px rgba(187,82,120,.09);
+  font:italic 1.1rem/1.9 Georgia,serif;color:#8e4c67;
+}
+@media(max-width:760px){
+ .zoo-memory-grid{grid-template-columns:1fr}
+ .zoo-memory-card,.zoo-memory-card img{min-height:360px}
+}
+@media(max-width:900px){.trip-gallery{grid-template-columns:1fr 1fr}.trip-photo,.trip-photo img{min-height:330px}}
+@media(max-width:600px){.trip-gallery{grid-template-columns:1fr}.trip-photo,.trip-photo img{min-height:380px}}
+
+.timeline{
+  position:relative; max-width:780px; margin:auto; padding-left:12px;
+}
+.timeline::before{
+  content:""; position:absolute; left:22px; top:10px; bottom:12px; width:2px;
+  background:linear-gradient(#ffc2d7,#ffe5ef,#ffd3e1);
+}
+.timeline-item{
+  position:relative; padding:0 0 28px 62px;
+}
+.timeline-item::before{
+  content:"♡"; position:absolute; left:6px; top:0;
+  width:32px; height:32px; border-radius:50%;
+  background:#fff; border:1px solid #ffc2d7; color:#d94e82;
+  display:grid; place-items:center;
+}
+.timeline-item h3{margin:0 0 8px; color:#b13a67}
+.timeline-item p{margin:0; line-height:1.82; color:#80606f}
+
+.envelope-section .envelope-wrap{
+  max-width:760px; margin:auto; text-align:center;
+}
+.envelope{
+  position:relative; margin:30px auto 0; width:min(92%,560px); height:360px; cursor:pointer;
+  filter:drop-shadow(0 22px 36px rgba(199,84,127,.17));
+}
+.envelope-back,.envelope-front,.envelope-flap,.envelope-letter{
+  position:absolute; inset:0; border-radius:24px;
+}
+.envelope-back{background:linear-gradient(135deg,#ffe4ee,#ffd1e0)}
+.envelope-front{
+  background:linear-gradient(135deg,#ffb6cd,#f18eb3);
+  clip-path:polygon(0 35%,50% 68%,100% 35%,100% 100%,0 100%);
+}
+.envelope-flap{
+  background:linear-gradient(135deg,#ffc4d8,#ffa8c6);
+  clip-path:polygon(0 0,100% 0,50% 58%);
+  transform-origin:top; transition:transform .8s ease;
+}
+.envelope-letter{
+  inset:35px 35px auto; height:245px; background:#fffefc;
+  box-shadow:0 12px 30px rgba(167,59,99,.12); padding:24px; border-radius:18px;
+  transform:translateY(82px); transition:transform .85s ease;
+  text-align:left; overflow:auto;
+}
+.envelope.open .envelope-flap{transform:rotateX(180deg)}
+.envelope.open .envelope-letter{transform:translateY(-18px)}
+.envelope-letter h3{margin:0 0 12px; color:#b43f6c}
+.envelope-letter p{margin:0 0 12px; line-height:1.8}
+.tap-hint{margin-top:16px; color:#9b7283}
+
+.final{
+  padding:96px 22px 110px;
+  background:radial-gradient(ellipse at center, #ffdce8 0%, #fff1f5 40%, transparent 76%);
+  text-align:center;
+}
+.final-card{
+  max-width:900px; margin:auto;
+  background:#ffffffb5; border:1px solid #fff; border-radius:34px;
+  box-shadow:var(--shadow); padding:40px 26px;
+}
+.final-heart{font-size:4rem; animation:heartbeat 1.5s infinite}
+.final p{max-width:680px; margin:0 auto; line-height:1.95; color:#7c5a6a}
+#surprise{
+  display:none; margin:22px auto 0; max-width:620px; padding:20px 22px;
+  background:#fff; border:1px solid #ffd0de; border-radius:20px;
+  box-shadow:0 12px 28px rgba(199,84,127,.13); line-height:1.85;
+}
+#surprise.show{display:block; animation:fadeUp .55s ease}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(12px)}
+  to{opacity:1; transform:translateY(0)}
+}
+footer{
+  text-align:center; padding:22px; color:#a88092; font-size:.84rem;
+}
+
+@media(max-width:900px){
+  .letter-wrapper,.thanks-layout,.gallery{grid-template-columns:1fr}
+  .promise-grid,.stat-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  nav{top:10px; padding:7px}
+  nav a{padding:9px 10px; font-size:.76rem}
+  section{padding:74px 18px}
+  .hero-card{padding:30px 18px 26px}
+  .hero-mini{gap:10px}
+  .mini-card{min-width:150px}
+  .promise-grid,.stat-grid{grid-template-columns:1fr}
+  .photo-slot.tall{min-height:340px}
+  .envelope{height:380px}
+  .envelope-letter{inset:24px 24px auto; height:280px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+.promise-keepsake{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:28px;align-items:center;max-width:1020px;margin:0 auto;
+}
+.promise-keepsake-photo{
+  overflow:hidden;border-radius:28px;padding:10px;background:linear-gradient(135deg,#fff,#f7dce8,#fff8fb);
+  box-shadow:0 18px 45px rgba(187,82,120,.16);transform:rotate(-1deg);
+}
+.promise-keepsake-photo img{display:block;width:100%;height:auto;max-height:680px;object-fit:contain;border-radius:20px}
+.promise-keepsake-copy{
+  padding:30px;border-radius:28px;background:#ffffffc9;border:1px solid #fff;
+  box-shadow:0 12px 30px rgba(187,82,120,.09);
+}
+.promise-keepsake-copy .handwritten-label{
+  color:#b73d6d;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;
+}
+.promise-keepsake-copy h3{font:italic 1.8rem/1.3 Georgia,serif;color:#a83c69;margin:0 0 16px}
+.promise-keepsake-copy p{line-height:1.9;color:#765363;margin:0 0 14px}
+.promise-keepsake-sign{font:italic 1.15rem Georgia,serif;color:#b73d6d;text-align:right;margin-top:22px}
+@media(max-width:760px){.promise-keepsake{grid-template-columns:1fr}.promise-keepsake-copy{padding:23px}.promise-keepsake-copy h3{font-size:1.55rem}}
+
+
+/* Mobile-first refinements for the full love-story website */
+html{scroll-padding-top:82px}
+section{scroll-margin-top:82px}
+img{height:auto}
+button,a{ -webkit-tap-highlight-color:transparent }
+.future-wedding-section{
+  background:
+    radial-gradient(circle at 12% 12%,rgba(241,215,165,.25),transparent 28%),
+    radial-gradient(circle at 90% 85%,rgba(238,189,205,.28),transparent 28%);
+}
+.wedding-wrap{max-width:900px;margin:0 auto}
+.wedding-card{
+  max-width:760px;margin:0 auto;padding:12px;border-radius:30px;
+  background:linear-gradient(135deg,#d9b978,#fff3d4 28%,#c9a65f 54%,#fff1c8 78%,#c7a15b);
+  box-shadow:0 22px 65px rgba(120,78,40,.18);
+}
+.wedding-cover,.wedding-inside{
+  position:relative;overflow:hidden;border-radius:22px;
+  border:1px solid rgba(171,128,59,.65);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.95),transparent 42%),
+    linear-gradient(145deg,#fffdf6,#fff6e5 55%,#f9e8c9);
+  color:#765b36;text-align:center;
+}
+.wedding-cover{padding:clamp(28px,6vw,60px) clamp(18px,5vw,54px)}
+.wedding-cover:before,.wedding-cover:after{
+  content:"❦";position:absolute;color:#c4a05f;font-size:2.3rem;opacity:.8;
+}
+.wedding-cover:before{top:14px;left:18px;transform:rotate(-35deg)}
+.wedding-cover:after{bottom:14px;right:18px;transform:rotate(145deg)}
+.wedding-frame{
+  border:1px solid #d7bc7f;outline:1px solid rgba(215,188,127,.35);
+  outline-offset:6px;padding:clamp(20px,4vw,38px) 14px;border-radius:5px;
+}
+.wedding-eyebrow{
+  text-transform:uppercase;letter-spacing:.22em;font-size:.76rem;color:#997c4c;
+}
+.wedding-monogram{
+  margin:18px 0 12px;font:italic clamp(2.6rem,7vw,4.2rem)/1 Georgia,serif;color:#b18a4c;
+}
+.wedding-monogram span{font-size:.55em;color:#c87b91;padding:0 6px}
+.wedding-cover h3{
+  margin:12px 0 18px;font:500 clamp(1.7rem,5.8vw,3rem)/1.2 Georgia,serif;
+  color:#77583a;overflow-wrap:anywhere;
+}
+.wedding-cover h3 i{font-size:.72em;font-weight:400;color:#bf8e9e}
+.wedding-subtitle{letter-spacing:.2em;font-size:.82rem;color:#a0814e}
+.wedding-cover .wedding-date{
+  margin:18px auto 22px;color:#9a7a4c;font:italic 1rem Georgia,serif;
+}
+.wedding-open-btn,.wedding-close-btn{
+  border:1px solid #b9975b;border-radius:999px;padding:12px 20px;
+  background:linear-gradient(135deg,#b8924e,#e3c986);color:#fffdf5;
+  box-shadow:0 8px 18px rgba(151,112,54,.18);min-height:44px;
+  transition:transform .25s,box-shadow .25s;
+}
+.wedding-open-btn:hover,.wedding-close-btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(151,112,54,.25)}
+.wedding-inside{display:none;padding:clamp(26px,6vw,58px) clamp(18px,6vw,60px)}
+.wedding-card.is-open .wedding-cover{display:none}
+.wedding-card.is-open .wedding-inside{display:block;animation:weddingReveal .65s ease both}
+@keyframes weddingReveal{from{opacity:0;transform:translateY(12px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+.wedding-flower{font-size:2rem;color:#c39a59;letter-spacing:.15em}
+.wedding-inside .wedding-kicker{margin:10px 0 16px;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;color:#9c8050}
+.wedding-inside h3{font:italic clamp(2rem,6vw,3.2rem)/1.2 Georgia,serif;color:#a87850;margin:12px 0}
+.wedding-inside p{line-height:1.85;color:#7d674a;margin:10px auto;max-width:540px}
+.wedding-details{
+  margin:24px auto;padding:18px 12px;max-width:480px;
+  border-top:1px solid #d9c28e;border-bottom:1px solid #d9c28e;
+  font:italic 1.08rem/1.9 Georgia,serif;color:#9b7545;
+}
+.wedding-note{
+  max-width:700px;margin:18px auto 0;text-align:center;
+  color:#896e7d;font-size:.9rem;line-height:1.8;
+}
+@media(max-width:760px){
+  nav{
+    top:8px;left:8px;right:8px;transform:none;width:auto;max-width:none;
+    flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;
+    white-space:nowrap;gap:4px;padding:6px;border-radius:17px;
+    max-height:54px;scrollbar-width:none;overscroll-behavior-x:contain;
+  }
+  nav::-webkit-scrollbar{display:none}
+  nav a{flex:0 0 auto;white-space:nowrap;padding:10px 12px;font-size:.78rem;min-height:40px}
+  section{padding:68px 15px}
+  .section-inner{width:100%;max-width:100%}
+  .section-head{margin-bottom:28px}
+  .section-head p{font-size:.97rem;line-height:1.75}
+  h2{font-size:clamp(1.8rem,8vw,2.5rem);line-height:1.12;letter-spacing:-.025em}
+  .hero{min-height:100svh;padding:94px 14px 54px}
+  .hero-card{padding:27px 16px 24px;border-radius:24px}
+  .hero-badge{font-size:.72rem;line-height:1.6}
+  .hero-actions{gap:10px}
+  .btn{max-width:100%;white-space:normal}
+  .letter-wrapper,.side-stack,.gallery,.trip-gallery,.study-gallery,
+  .zoo-memory-grid,.promise-keepsake{grid-template-columns:minmax(0,1fr)!important}
+  .letter-wrapper{gap:14px}
+  .paper,.glass-card,.promise-keepsake-copy{padding:22px 18px;border-radius:22px}
+  .stat-grid,.promise-grid{grid-template-columns:minmax(0,1fr)!important}
+  .photo-slot,.photo-slot.tall{min-height:300px}
+  .trip-photo,.trip-photo img,.study-photo,.study-photo img,
+  .zoo-memory-card,.zoo-memory-card img{min-height:320px}
+  .trip-photo img,.study-photo img,.zoo-memory-card img{max-height:65svh}
+  .trip-caption,.study-caption,.zoo-memory-caption{padding:38px 16px 18px!important}
+  .trip-caption strong,.study-caption strong,.zoo-memory-caption strong{font-size:1.13rem}
+  .trip-caption span,.study-caption span,.zoo-memory-caption span{font-size:.88rem;line-height:1.65}
+  .distance-note,.zoo-memory-note{padding:20px 17px;font-size:1rem;line-height:1.8}
+  .promise-keepsake-photo{transform:none;padding:7px;border-radius:22px}
+  .promise-keepsake-photo img{max-height:72svh;object-fit:contain}
+  .timeline{padding-left:24px}
+  .timeline-item{padding:18px 16px;border-radius:18px}
+  .envelope{height:340px;max-width:100%}
+  .music-btn{right:10px;bottom:calc(10px + env(safe-area-inset-bottom));padding:11px 14px;font-size:.82rem}
+  .wedding-card{padding:7px;border-radius:23px}
+  .wedding-cover,.wedding-inside{border-radius:17px}
+  .wedding-cover{padding:22px 12px}
+  .wedding-frame{padding:25px 8px;outline-offset:3px}
+  .wedding-eyebrow{font-size:.66rem;letter-spacing:.15em}
+  .wedding-subtitle{font-size:.7rem;letter-spacing:.14em}
+  .wedding-cover:before{top:9px;left:10px;font-size:1.7rem}
+  .wedding-cover:after{bottom:9px;right:10px;font-size:1.7rem}
+  .wedding-open-btn,.wedding-close-btn{width:100%;max-width:290px}
+}
+@media(max-width:380px){
+  nav a{font-size:.72rem;padding:9px 10px}
+  section{padding-left:12px;padding-right:12px}
+  .hero-card{padding-left:13px;padding-right:13px}
+  .wedding-frame{padding-left:5px;padding-right:5px}
+}
+
+
+/* Gia Hân's favorite color: a calm blue letter theme */
+#xin-loi{
+  background:
+    radial-gradient(circle at 8% 8%,rgba(255,255,255,.72),transparent 28%),
+    radial-gradient(circle at 92% 82%,rgba(151,207,238,.38),transparent 30%),
+    linear-gradient(145deg,#d9efff 0%,#b9e0f7 42%,#eaf7ff 100%);
+  position:relative;isolation:isolate;
+}
+#xin-loi::before{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.25;pointer-events:none;
+  background-image:radial-gradient(rgba(65,132,178,.26) .8px,transparent .8px);
+  background-size:18px 18px;
+}
+#xin-loi .section-head .kicker{color:#397ca9}
+#xin-loi .section-head h2{color:#235b83}
+#xin-loi .section-head p{color:#416d89}
+#xin-loi .paper{
+  background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.92);
+  box-shadow:0 20px 55px rgba(44,111,159,.14);color:#35566c;
+}
+#xin-loi .paper p{line-height:1.95;color:#35566c}
+#xin-loi .paper .signature{color:#286b9b}
+#xin-loi .glass-card{
+  background:rgba(255,255,255,.72);border-color:rgba(255,255,255,.9);
+  box-shadow:0 14px 35px rgba(44,111,159,.10);
+}
+#xin-loi .glass-card h3{color:#286b9b}
+#xin-loi .glass-card p{color:#416d89;line-height:1.85}
+.blue-letter-label{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;padding:8px 13px;
+  border-radius:999px;background:#e5f4ff;color:#347eac;border:1px solid #c8e7fa;
+  font-size:.82rem;font-weight:600;
+}
+.secret-lock-card{
+  max-width:560px;margin:0 auto 26px;padding:clamp(22px,5vw,34px);
+  border-radius:28px;border:1px solid rgba(255,255,255,.92);
+  background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(229,244,255,.96));
+  box-shadow:0 20px 55px rgba(44,111,159,.13);text-align:center;
+}
+.secret-lock-icon{font-size:2.5rem;margin-bottom:8px;filter:drop-shadow(0 6px 10px rgba(53,126,172,.15))}
+.secret-lock-card h3{font:italic 1.65rem/1.3 Georgia,serif;color:#286b9b;margin:8px 0 10px}
+.secret-lock-copy{color:#587a91;line-height:1.75;margin:0 auto 22px;max-width:420px}
+.secret-lock-card label{display:block;text-align:left;max-width:430px;margin:0 auto 8px;color:#315f7e;font-size:.9rem;font-weight:600}
+.secret-input-row{display:flex;gap:9px;max-width:430px;margin:0 auto}
+.secret-input-row input{
+  flex:1;min-width:0;height:48px;padding:0 14px;border-radius:14px;
+  border:1px solid #b9dcee;background:#fff;color:#244e6a;font:inherit;
+  letter-spacing:.12em;outline:none;box-sizing:border-box;
+}
+.secret-input-row input:focus{border-color:#4d9bc8;box-shadow:0 0 0 3px rgba(77,155,200,.15)}
+.secret-input-row button{
+  min-height:48px;padding:0 18px;border:0;border-radius:14px;
+  background:linear-gradient(135deg,#367fae,#5ca8d5);color:white;font-weight:700;
+  box-shadow:0 8px 18px rgba(54,127,174,.2);cursor:pointer;
+}
+.secret-hint{font-size:.86rem;line-height:1.65;color:#668ba4;margin:14px 0 0}
+.secret-error{min-height:1.2em;color:#bd4966;font-size:.9rem;margin:8px 0 0}
+.secret-letter-content[hidden]{display:none!important}
+.secret-unlocked-note{
+  display:inline-block;margin:0 auto 4px;padding:9px 14px;border-radius:999px;
+  color:#286b9b;background:#e5f4ff;border:1px solid #c8e7fa;font-size:.85rem;
+}
+#thu-bi-mat .envelope{cursor:pointer}
+#thu-bi-mat .envelope-letter{height:270px;max-height:calc(100% - 45px);padding:22px}
+#thu-bi-mat .envelope.open .envelope-letter{height:min(650px,72vh);overflow:auto;z-index:5}
+#thu-bi-mat .envelope-letter p{line-height:1.8}
+@media(max-width:700px){
+  #xin-loi{padding-top:68px;padding-bottom:74px}
+  #xin-loi .letter-wrapper{grid-template-columns:minmax(0,1fr)!important;gap:16px}
+  #xin-loi .paper{padding:23px 18px;border-radius:22px}
+  #xin-loi .paper p{font-size:.97rem;line-height:1.88}
+  .blue-letter-label{font-size:.76rem}
+  .secret-lock-card{padding:22px 16px;border-radius:22px}
+  .secret-lock-card h3{font-size:1.45rem}
+  .secret-input-row{flex-direction:column}
+  .secret-input-row input,.secret-input-row button{width:100%;min-height:48px}
+  #thu-bi-mat .envelope{width:100%;height:370px}
+  #thu-bi-mat .envelope-letter{inset:20px 15px auto;height:285px;padding:17px}
+  #thu-bi-mat .envelope.open .envelope-letter{
+    inset:12px 6px auto;height:min(72vh,650px);max-height:72vh;padding:17px;
+    transform:translateY(-8px);z-index:8;
+  }
+  #thu-bi-mat .envelope-letter h3{font-size:1.12rem}
+  #thu-bi-mat .envelope-letter p{font-size:.87rem;line-height:1.7;margin-bottom:10px}
+}
+
+
+/* Romantic audio: compact, mobile-friendly official music player */
+.love-song-dock{
+  position:fixed;z-index:60;left:15px;bottom:calc(15px + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column-reverse;align-items:flex-start;gap:9px;
+  max-width:calc(100vw - 30px);font-family:"Segoe UI",system-ui,sans-serif;
+}
+.love-song-toggle{
+  min-height:45px;border:1px solid #fff5fa;border-radius:999px;padding:11px 17px;
+  color:white;background:linear-gradient(130deg,#f59cbe,#d7598d);
+  box-shadow:0 12px 32px #be648e42;font:600 .9rem "Segoe UI",system-ui,sans-serif;
+  cursor:pointer;transition:transform .25s,box-shadow .25s;
+}
+.love-song-toggle:hover{transform:translateY(-2px);box-shadow:0 15px 35px #be648e54}
+.love-song-toggle:focus-visible,.love-song-close:focus-visible{outline:3px solid #accfe9;outline-offset:3px}
+.love-song-panel[hidden]{display:none!important}
+.love-song-panel{
+  width:min(350px,calc(100vw - 30px));padding:12px;border-radius:22px;
+  background:#fffaffed;border:1px solid #fff;box-shadow:0 16px 50px #774e6b38;
+  backdrop-filter:blur(16px);color:#79485f;
+}
+.love-song-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:1px 1px 11px}
+.love-song-head strong{display:block;font-size:.96rem;color:#a83b71}
+.love-song-head small{display:block;margin-top:3px;color:#8a677a;font-size:.79rem}
+.love-song-close{
+  border:1px solid #f3c7d8;border-radius:50%;height:34px;width:34px;
+  background:#fff4f9;color:#ad4f7c;cursor:pointer;flex:0 0 auto;
+}
+.love-song-video{position:relative;aspect-ratio:16/9;border-radius:13px;overflow:hidden;background:#e4e5ed}
+.love-song-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.love-song-help{font-size:.78rem;line-height:1.55;margin:10px 3px 6px;color:#876b7a}
+.love-song-official{display:inline-block;margin:3px;color:#b7477a;font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){
+ .love-song-dock{left:10px;bottom:calc(10px + env(safe-area-inset-bottom));max-width:calc(100vw - 20px)}
+ .love-song-toggle{font-size:.79rem;padding:11px 12px;max-width:min(65vw,275px);white-space:normal;text-align:left}
+ .love-song-panel{width:min(330px,calc(100vw - 20px))}
+ .music-btn{right:10px;bottom:calc(10px + env(safe-area-inset-bottom));max-width:28vw;font-size:.78rem;padding:11px 12px;white-space:normal}
+}
+
+</style>
+</head>
+<body class="no-scroll">
+<div id="loader">
+  <div class="loader-card">
+    <div class="loader-heart">💗</div>
+    <div class="loader-title">Phú gửi đến Hân…</div>
+    <div class="loader-sub">Một lời xin lỗi, một lời cảm ơn và rất nhiều yêu thương được gói lại trong trang nhỏ này.</div>
+    <div class="loading-bar"><div class="loading-fill"></div></div>
+    <div class="loader-sub" style="font-size:.95rem">Đang mở từng điều chân thành nhất…</div>
+  </div>
+</div>
+
+<canvas id="star-layer"></canvas>
+<div id="fx-layer" aria-hidden="true"></div>
+<div id="sparkle-layer" aria-hidden="true"></div>
+<div class="cursor-glow" id="glow"></div>
+
+<nav aria-label="Điều hướng">
+  <a href="#mo-dau">Mở đầu</a>
+  <a href="#xin-loi">Xin lỗi</a>
+  <a href="#cam-on">Cảm ơn</a>
+  <a href="#loi-hua">Lời hứa</a>
+  <a href="#ky-niem">Kỷ niệm</a>
+  <a href="#vung-tau">Vũng Tàu ♡</a>
+  <a href="#du-hoc">Du học ✈️</a>
+  <a href="#thao-cam-vien">Thảo Cầm Viên 🌿</a>
+  <a href="#loi-hua-han">Lời hứa của Hân 💌</a>
+  <a href="#tuong-lai">Tương lai</a>
+  <a href="#thiep-cuoi-tuong-lai">Thiệp cưới 💍</a>
+  <a href="#thu-bi-mat">Thư bí mật</a>
+</nav>
+
+<button class="music-btn" id="fxBtn">✨ Bật hiệu ứng</button>
+
+
+<!-- Phát nhạc qua trình phát YouTube chính thức, chỉ tải khi người dùng bấm. -->
+<div class="love-song-dock" id="loveSongDock">
+  <button class="love-song-toggle" id="loveSongToggle" type="button" aria-expanded="false" aria-controls="loveSongPanel">🎵 Anh Sẽ Luôn Thật Gần</button>
+  <section class="love-song-panel" id="loveSongPanel" aria-label="Nhạc nền tình yêu" hidden>
+    <div class="love-song-head">
+      <div><strong>♪ Anh Sẽ Luôn Thật Gần</strong><small>Khắc Hưng · Gửi za Hân 💗</small></div>
+      <button type="button" class="love-song-close" id="loveSongClose" aria-label="Đóng trình phát nhạc">✕</button>
+    </div>
+    <div class="love-song-video" id="loveSongVideo"></div>
+    <p class="love-song-help">Chạm ▶ trong khung nhạc để nghe. Nhạc cần kết nối Internet; một số điện thoại không cho phép tự phát âm thanh.</p>
+    <a class="love-song-official" href="https://www.youtube.com/watch?v=mwVLTHsp0Qg" target="_blank" rel="noopener noreferrer">Mở bài hát trên YouTube ↗</a>
+  </section>
+</div>
+
+<main>
+  <header class="hero" id="mo-dau">
+    <div class="hero-card reveal">
+      <div class="hero-badge">♡ Lê Quang Phú · 23/08/2006 &nbsp;|&nbsp; Trần Gia Hân · 07/02/2007 ♡</div>
+      <h1>Phú xin lỗi <span>za Hân của anh.</span></h1>
+      <p class="lead" id="typedLead">
+        Tình yêu của Phú và Hân bắt đầu ngày 25/05/2025. Từ ngày ấy, câu chuyện của anh không còn chỉ là những ngày bình thường nữa — vì trong đó đã có em.
+      </p>
+      <p class="lead" style="margin-top:12px">
+        Anh biết đã có những lúc anh làm em buồn, làm em thất vọng và khiến trái tim em nặng hơn những gì tình yêu vốn phải mang lại. Vì vậy, anh làm trang web này không chỉ để nói “anh xin lỗi”, mà còn để nói “anh cảm ơn” và “anh sẽ cố gắng thật nhiều để yêu em tử tế hơn mỗi ngày”.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#xin-loi">Đọc lời anh muốn nói ♡</a>
+        <a class="btn secondary" href="#thu-bi-mat">Mở thư bí mật ✉️</a>
+      </div>
+      <div class="hero-couple-photo">
+        <img src="assets/memory-01.jpg" alt="Ảnh kỷ niệm của Phú và Hân" />
+        <div class="hero-photo-caption"><span>♡</span> Phú &amp; Hân · 25.05.2025 <span>♡</span></div>
+      </div>
+      <div class="hero-mini">
+        <div class="mini-card"><strong id="daysLove">0</strong><span>ngày bên nhau kể từ 25/05/2025</span></div>
+        <div class="mini-card"><strong>1 trái tim</strong><span>nhưng luôn hướng về Hân</span></div>
+        <div class="mini-card"><strong>Rất nhiều</strong><span>lời cảm ơn, xin lỗi và lời hứa</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">Kéo xuống để cảm nhận</div>
+  </header>
+
+  <section id="xin-loi">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Lời xin lỗi chân thành</div>
+        <h2>Không phải chỉ xin lỗi bằng lời…</h2>
+        <p>Anh muốn xin lỗi bằng sự thấu hiểu, bằng trách nhiệm và bằng mong muốn thật sự được sửa đổi để em được yêu thương đúng nghĩa.</p>
+      </div>
+      <div class="letter-wrapper">
+        <article class="paper blue-love-letter">
+          <div class="blue-letter-label">Một lá thư được viết bằng màu em thích 💙</div>
+          <p>Hân à, cô gái anh thương,</p>
+          <p>Anh đã nghĩ rất nhiều về những điều mình muốn nói với em. Có những lời nếu chỉ nói thật nhanh trong một cuộc trò chuyện thì có lẽ em sẽ chẳng cảm nhận hết được, nên hôm nay anh muốn viết chúng ra, chậm rãi và chân thành nhất có thể. Anh không viết những dòng này để bắt em phải hết buồn ngay, cũng không mong chỉ cần một lá thư là mọi chuyện sẽ trở lại như chưa từng có gì xảy ra. Anh viết vì em xứng đáng được lắng nghe một lời xin lỗi tử tế, một lời cảm ơn đủ đầy và những lời hứa mà anh phải có trách nhiệm thực hiện.</p>
+          <p>Anh xin lỗi em, Hân à. Xin lỗi vì những lúc anh chưa đủ tinh tế để nhận ra em đang buồn; vì có khi em cần được lắng nghe nhưng anh lại chưa thật sự hiểu điều em muốn nói; vì những lúc cách cư xử của anh khiến em phải suy nghĩ nhiều hơn là cảm thấy bình yên. Anh biết tình yêu không chỉ được đo bằng những lần nói nhớ, nói thương, mà còn nằm trong cách mình đối xử với nhau vào những ngày mệt mỏi nhất. Nếu đã có lúc anh khiến em cảm thấy cô đơn ngay cả khi đang yêu anh, anh thật lòng xin lỗi.</p>
+          <p>Anh không muốn lấy sự vụng về hay tuổi trẻ của mình làm lý do để biện minh cho những điều chưa tốt. Anh còn nhiều điều phải học: học cách bình tĩnh khi bất đồng, học cách nghe em nói hết câu, học cách đặt mình vào vị trí của em trước khi phản ứng, và học cách xin lỗi mà không tìm lý do bào chữa. Anh hiểu rằng em không cần một người chỉ biết nói những câu thật hay; em cần một người có thể khiến em cảm nhận được sự thay đổi qua từng hành động nhỏ. Anh muốn trở thành người như thế — không phải chỉ trong hôm nay, mà cả những ngày sau này.</p>
+          <p>Anh cũng muốn cảm ơn em. Cảm ơn Hân vì đã bước vào cuộc đời anh từ ngày 25/05/2025, để một ngày bình thường cũng có thể trở thành điều đáng mong chờ. Cảm ơn em vì những lần nắm tay anh, những khoảnh khắc ngốc nghếch cùng nhau bật cười, những chuyến đi, những tấm ảnh và cả những điều rất nhỏ mà có lẽ lúc ấy anh chưa kịp nói lời cảm ơn. Cảm ơn em vì đã cho anh biết cảm giác có một người để nhớ, để kể nghe chuyện trong ngày, để muốn cố gắng hơn và để nghĩ đến một tương lai không chỉ có riêng mình.</p>
+          <p>Anh biết em cũng có những ngày mệt, những nỗi lo riêng và những điều không dễ nói thành lời. Anh không muốn tình yêu của chúng mình trở thành một nơi khiến em phải gồng mình hay lúc nào cũng cố tỏ ra mạnh mẽ. Anh mong mình có thể là người em được thoải mái chia sẻ, được nói thật cảm xúc, được giận khi có lý do, được buồn mà không sợ bị xem nhẹ. Anh muốn học cách yêu em theo cách em cảm nhận được, chứ không chỉ theo cách anh nghĩ là đủ.</p>
+          <p>Và em biết không, anh chọn màu xanh cho trang web này vì đó là màu em thích. Với anh, màu xanh gợi cảm giác bình yên, dịu mát và có hy vọng — giống như điều anh mong em cảm nhận được khi ở cạnh anh. Anh muốn mỗi lần em mở trang này, màu xanh sẽ nhắc em rằng anh đã nhớ một điều nhỏ thuộc về em và muốn nâng niu nó. Có thể chỉ là một màu sắc thôi, nhưng anh mong em thấy rằng anh muốn để ý đến những điều em yêu thích, lắng nghe những điều em cần và học cách ghi nhớ thế giới nhỏ bé của em bằng sự quan tâm thật lòng.</p>
+          <p>Anh không dám hứa rằng từ nay chúng mình sẽ chẳng bao giờ cãi nhau, chẳng bao giờ hiểu lầm hay chẳng có ngày nào khó khăn. Điều đó có lẽ không thực tế. Nhưng anh hứa sẽ cố gắng không để cái tôi lớn hơn tình cảm, không xem sự im lặng là cách giải quyết mọi chuyện, và không mặc định rằng em sẽ luôn bỏ qua cho anh. Khi anh sai, anh sẽ tập nhận lỗi rõ ràng; khi em buồn, anh sẽ cố gắng lắng nghe trước khi giải thích; khi cả hai bất đồng, anh mong chúng mình có thể cùng tìm cách giải quyết thay vì làm nhau đau thêm.</p>
+          <p>Nếu một ngày anh đi xa để học tập và theo đuổi ước mơ, anh càng muốn học cách giữ gìn tình cảm bằng sự tin tưởng và những điều đều đặn: dành thời gian cho nhau, kể em nghe cuộc sống của anh, hỏi han ngày của em và cùng bàn bạc khi có chuyện khó khăn. Anh muốn trưởng thành, học tập nghiêm túc và xây dựng tương lai bằng chính nỗ lực của mình. Anh không hứa một cuộc sống hoàn hảo hay những điều xa hoa; anh hứa sẽ cố gắng trở thành người có trách nhiệm, biết yêu thương và cùng em xây từng viên gạch nhỏ cho tương lai nếu cả hai vẫn chọn nhau.</p>
+          <p>Hân à, em không cần phải trả lời lá thư này ngay, cũng không cần phải tha thứ chỉ vì anh đã viết dài. Cảm xúc của em có thời gian của nó, và anh tôn trọng điều đó. Anh chỉ mong em nhìn thấy rằng lời xin lỗi này không phải dấu chấm hết cho câu chuyện, cũng không phải một cách để yêu cầu em quên đi điều khiến em buồn. Nó là điểm bắt đầu để anh nhìn lại mình và cố gắng làm tốt hơn. Anh muốn tình yêu của chúng mình được chữa lành bằng sự chân thành, sự kiên nhẫn và những thay đổi em có thể tự mình nhận ra.</p>
+          <p>Anh thương em, Gia Hân. Thương cả nụ cười của em, những điều em thích, những ước mơ em đang theo đuổi và cả những lúc em không ổn. Cảm ơn em vì đã cùng anh viết nên một phần thanh xuân rất đáng nhớ. Anh mong sau này khi nhìn lại, chúng mình sẽ không chỉ nhớ những lời đã hứa, mà còn nhớ mình đã cố gắng giữ lời bằng cách nào.</p>
+          <p style="margin-bottom:0"><strong>Anh xin lỗi vì những điều chưa tốt. Anh cảm ơn vì em đã đến. Và anh sẽ cố gắng để tình yêu dành cho em không chỉ nằm trong những dòng chữ màu xanh này, mà còn hiện diện trong cách anh đối xử với em mỗi ngày. Nếu tương lai ấy vẫn có em cùng bước, anh sẽ xem đó là một điều quý giá cần được nâng niu bằng cả trái tim và hành động. ♡</strong></p>
+          <div class="signature">
+            Phú thương Hân nhiều lắm ♡<br>
+            <span style="font:normal .92rem 'Segoe UI',sans-serif;color:#507e9b">Từ 25/05/2025 — mong còn thật nhiều ngày dịu dàng phía trước</span>
+          </div>
+        </article>
+        <div class="side-stack">
+          <div class="glass-card">
+            <h3>Điều anh nhận ra</h3>
+            <p>Tình yêu không chỉ cần những lời ngọt ngào, mà còn cần sự tử tế, sự kiên nhẫn và khả năng làm cho người mình thương cảm thấy bình yên.</p>
+          </div>
+          <div class="glass-card">
+            <h3>Điều anh mong</h3>
+            <p>Anh mong sau khi đọc những dòng này, em sẽ cảm nhận được rằng anh không hề xem nhẹ cảm xúc của em. Anh đang cố gắng thật sự — vì em, vì chúng mình.</p>
+          </div>
+          <div class="glass-card">
+            <h3>Điều anh sẽ làm</h3>
+            <p>Anh sẽ chứng minh bằng hành động, không chỉ nói cho hay. Dịu dàng hơn, biết nghĩ hơn, trách nhiệm hơn và yêu em tốt hơn.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cam-on">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Lời cảm ơn</div>
+        <h2>Cảm ơn em vì đã xuất hiện trong cuộc đời anh</h2>
+        <p>Có những điều tưởng như rất nhỏ, nhưng lại là những điều làm tim anh ấm lên mỗi ngày.</p>
+      </div>
+      <div class="thanks-layout">
+        <div class="note-box">
+          <h3 style="margin:0;color:#b93d6c">Anh cảm ơn Hân vì…</h3>
+          <ul>
+            <li>Đã đến bên anh và để cho những ngày bình thường của anh trở nên có ý nghĩa hơn.</li>
+            <li>Đã cho anh biết cảm giác mong chờ một tin nhắn, nhớ một nụ cười và trân trọng một người nhiều đến thế nào.</li>
+            <li>Đã ở bên anh trong những lúc vui vẻ, và cả những lúc anh chưa thật sự tốt như lẽ ra anh phải thế.</li>
+            <li>Đã dịu dàng, đáng yêu và mang đến cho anh rất nhiều cảm xúc đẹp mà có lẽ sau này anh vẫn sẽ luôn nhớ mãi.</li>
+            <li>Đã dạy anh rằng tình yêu không chỉ là thích nhau, mà là học cách yêu nhau tử tế hơn từng ngày.</li>
+          </ul>
+        </div>
+        <div class="heart-box big-quote">
+          <span>“Cảm ơn em vì đã là Gia Hân — cô gái làm trái tim anh mềm lại, biết nhớ, biết thương và biết muốn trở thành một phiên bản tốt hơn.”</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Dấu mốc tình yêu</div>
+        <h2>Những con số nhỏ nhưng mang ý nghĩa thật lớn</h2>
+        <p>Từ một ngày đặc biệt, chúng mình đã cùng nhau bước qua nhiều cảm xúc, nhiều kỷ niệm và nhiều điều đáng trân trọng.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="num" id="counterDays">0</div>
+          <div class="label">ngày kể từ lúc Phú và Hân bắt đầu yêu nhau</div>
+        </div>
+        <div class="stat">
+          <div class="num">25/05/2025</div>
+          <div class="label">ngày trái tim hai đứa bắt đầu cùng chung nhịp đập</div>
+        </div>
+        <div class="stat">
+          <div class="num">∞</div>
+          <div class="label">là số dịu dàng, quan tâm và cố gắng mà Phú muốn dành cho Hân</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loi-hua">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Lời hứa từ trái tim</div>
+        <h2>Phú hứa sẽ yêu Hân bằng sự trưởng thành hơn</h2>
+        <p>Anh không dám hứa sẽ hoàn hảo ngay lập tức. Nhưng anh dám hứa rằng anh sẽ nghiêm túc với từng thay đổi của mình để em được hạnh phúc hơn.</p>
+      </div>
+      <div class="promise-grid">
+        <article class="promise-card"><div class="icon">👂🏻</div><h3>Lắng nghe em nhiều hơn</h3><p>Anh sẽ học cách lắng nghe bằng cả sự chú ý lẫn sự thấu hiểu, không vội vàng, không xem nhẹ cảm xúc của em.</p></article>
+        <article class="promise-card"><div class="icon">🌷</div><h3>Dịu dàng hơn với em</h3><p>Anh sẽ chọn lời nói tử tế hơn, cách cư xử ấm áp hơn để em luôn cảm thấy được trân trọng trong tình yêu này.</p></article>
+        <article class="promise-card"><div class="icon">🫶</div><h3>Quan tâm từ những điều nhỏ</h3><p>Từ một lời hỏi han, một sự chú ý nhỏ, một cái ôm đúng lúc — anh sẽ cố gắng để em thấy mình luôn quan trọng.</p></article>
+        <article class="promise-card"><div class="icon">🤝</div><h3>Không bỏ mặc vấn đề</h3><p>Khi có mâu thuẫn, anh sẽ không né tránh. Anh sẽ bình tĩnh nói chuyện, nhận lỗi khi sai và cùng em tìm cách tốt hơn.</p></article>
+        <article class="promise-card"><div class="icon">🧭</div><h3>Có trách nhiệm với tương lai</h3><p>Anh sẽ chăm chỉ hơn, định hướng rõ ràng hơn và nghiêm túc hơn với cuộc sống để có thể là chỗ dựa xứng đáng cho em.</p></article>
+        <article class="promise-card"><div class="icon">💗</div><h3>Yêu em bền lâu bằng hành động</h3><p>Không chỉ nói lời đẹp. Anh muốn từng ngày em đều có thể nhìn thấy sự cố gắng thật sự của anh dành cho em.</p></article>
+        <article class="promise-card"><div class="icon">✈️</div><h3>Dù có khoảng cách, vẫn đồng hành</h3><p>Nếu hành trình du học khiến chúng mình ở xa nhau, anh sẽ chủ động dành thời gian gọi điện, chia sẻ cuộc sống và cùng em giữ gìn sự tin tưởng bằng những việc nhỏ nhưng đều đặn.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ky-niem">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Album của hai đứa</div>
+        <h2>Đây là nơi dành cho những khoảnh khắc đẹp nhất của Phú và Hân</h2>
+        <p>Bây giờ trang web đã có sẵn những khung ảnh xinh xắn. Khi Phú gửi ảnh cho tôi, tôi sẽ giúp đưa ảnh của hai bạn vào thật đẹp.</p>
+      </div>
+      <div class="gallery">
+        <label class="photo-slot tall has-image">
+          <img src="assets/memory-01.jpg" alt="Khoảnh khắc đẹp nhất của Phú và Hân">
+          <span class="placeholder"><span class="big">📸</span><strong>Khoảnh khắc anh thương nhất</strong><small>Bấm vào đây để thêm tấm ảnh kỷ niệm đầu tiên</small></span>
+          <input type="file" accept="image/*" aria-label="Tải ảnh đầu tiên lên">
+        </label>
+        <div style="display:grid; gap:18px">
+          <label class="photo-slot has-image">
+            <img src="assets/memory-02.jpg" alt="Khoảnh khắc Phú và Hân nắm tay nhau thật dịu dàng">
+            <span class="placeholder"><span class="big">🌸</span><strong>Một ngày thật vui</strong><small>Thêm ảnh của hai bạn vào đây</small></span>
+            <span class="memory-caption">Chỉ cần nắm tay nhau, bình yên đã ở đây ♡</span>
+            <input type="file" accept="image/*" aria-label="Thay ảnh kỷ niệm thứ hai">
+          </label>
+          <label class="photo-slot has-image">
+            <img src="assets/memory-03.jpg" alt="Khoảnh khắc Phú và Hân nắm tay nhau ngoài trời">
+            <span class="placeholder"><span class="big">💞</span><strong>Nụ cười anh muốn giữ mãi</strong><small>Thêm một bức ảnh nữa nhé</small></span>
+            <span class="memory-caption">Một khoảnh khắc nhỏ, một tình yêu lớn 💗</span>
+            <input type="file" accept="image/*" aria-label="Thay ảnh kỷ niệm thứ ba">
+          </label>
+        </div>
+      </div>
+      <div class="gallery-note">Ảnh thêm ở đây chỉ để xem trước trên trình duyệt. Khi Phú gửi ảnh thật cho tôi, tôi sẽ chỉnh chính thức vào web cho hoàn hảo hơn.</div>
+    </div>
+  </section>
+
+
+  <section id="vung-tau">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Một chuyến đi có em</div>
+        <h2>Vũng Tàu cùng cô ấy ♡</h2>
+        <p>Có những kỷ niệm chẳng cần sân khấu lớn hay món quà đắt tiền. Chỉ cần được ở cạnh nhau, cùng ngắm nhìn thế giới và giữ lại vài tấm ảnh — thế là đủ để một ngày bình thường trở nên đáng nhớ.</p>
+        <div class="trip-date">Phú &amp; Hân · Những khoảnh khắc bên nhau</div>
+      </div>
+      <div class="trip-gallery">
+        <article class="trip-photo">
+          <img src="assets/memory-04.jpg" alt="Phú và Hân chụp ảnh gương cùng nhau">
+          <div class="trip-caption">
+            <strong>Một khung hình, hai đứa mình</strong>
+            <span>Anh thích những khoảnh khắc giản dị như thế này — được đứng cạnh em, lưu lại một chút thanh xuân của chúng mình.</span>
+          </div>
+        </article>
+        <article class="trip-photo">
+          <img src="assets/memory-05.jpg" alt="Khoảnh khắc gần gũi của Phú và Hân bên cửa sổ">
+          <div class="trip-caption">
+            <strong>Gần nhau là thấy vui rồi</strong>
+            <span>Chẳng cần lúc nào cũng phải tạo dáng thật đẹp. Chỉ cần là hai đứa, tự nhiên và thật lòng.</span>
+          </div>
+        </article>
+        <article class="trip-photo">
+          <img src="assets/memory-06.jpg" alt="Bóng của hai người trên con đường rợp bóng cây">
+          <div class="trip-caption">
+            <strong>Đường dài, mong vẫn có em</strong>
+            <span>Đi đâu không quan trọng bằng người đồng hành. Anh mong mình sẽ còn nhiều chuyến đi, nhiều câu chuyện và nhiều ngày vui cùng nhau.</span>
+          </div>
+        </article>
+      </div>
+      <p class="gallery-note">“Sau này, mong mình sẽ có thêm thật nhiều nơi để đi, thật nhiều ảnh để lưu và thật nhiều lý do để cảm ơn vì đã gặp được nhau.” 💗</p>
+    </div>
+  </section>
+
+
+  <section id="du-hoc">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Một chặng đường mới</div>
+        <h2>Ngày Phú bước đến ước mơ du học ✈️</h2>
+        <p>Có những chuyến đi mở ra tương lai, nhưng cũng khiến người ta nhận ra ai là người mình sẽ nhớ nhiều nhất. Nếu một ngày khoảng cách xuất hiện giữa hai đứa, anh mong chúng mình vẫn chọn tin tưởng, sẻ chia và cùng nhau cố gắng.</p>
+        <div class="trip-date">Lê Quang Phú ♡ Trần Gia Hân · Từ 25/05/2025</div>
+      </div>
+      <div class="study-gallery">
+        <article class="study-photo">
+          <img src="assets/memory-07.jpg" alt="Phú và Gia Hân chụp ảnh cùng nhau tại sân bay">
+          <div class="study-caption">
+            <strong>Một cái ôm trong hành trình lớn</strong>
+            <span>Anh mang theo hành lý cho một chặng đường mới, nhưng cũng mang theo những kỷ niệm, sự động viên và tình cảm mà Hân đã dành cho anh. Cảm ơn em vì là một phần thật đẹp trong tuổi trẻ của anh.</span>
+          </div>
+        </article>
+        <article class="study-photo">
+          <img src="assets/memory-08.jpg" alt="Gia Hân ngồi trên xe máy trong một khoảnh khắc đời thường">
+          <div class="study-caption">
+            <strong>Những điều bình thường sẽ thành nỗi nhớ</strong>
+            <span>Một buổi tối giản dị, một dáng hình quen thuộc, một khoảnh khắc không cần cầu kỳ. Có lẽ sau này chính những điều nhỏ bé ấy sẽ khiến anh nhớ nhà và nhớ em nhiều nhất.</span>
+          </div>
+        </article>
+      </div>
+      <div class="distance-note">
+        “Nếu có lúc chúng mình phải yêu nhau từ xa, anh không muốn khoảng cách trở thành lý do để em thấy cô đơn. Anh sẽ cố gắng giữ liên lạc, chia sẻ với em những điều xảy ra mỗi ngày, lắng nghe những lúc em cần và cùng em tìm cách để cả hai vẫn cảm thấy được đồng hành. Anh không thể hứa rằng mọi ngày đều dễ dàng, nhưng anh hứa sẽ không xem nhẹ tình cảm của chúng mình.”
+      </div>
+    </div>
+  </section>
+
+
+  <section id="thao-cam-vien">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Một ngày xanh trong thanh xuân</div>
+        <h2>Thảo Cầm Viên cùng em 🌿</h2>
+        <p>Có những buổi hẹn chẳng cần kế hoạch cầu kỳ. Chỉ cần cùng nhau đi dạo dưới bóng cây, chụp vài tấm hình ngộ nghĩnh, nắm tay nhau và biến một ngày bình thường thành một kỷ niệm thật riêng.</p>
+        <div class="zoo-memory-date">23.10.2026 · Lê Quang Phú ♡ Trần Gia Hân</div>
+      </div>
+      <div class="zoo-memory-grid">
+        <article class="zoo-memory-card">
+          <img src="assets/memory-09.jpg" alt="Phú chụp ảnh Gia Hân bên tượng ngựa vằn tại Thảo Cầm Viên">
+          <div class="zoo-memory-caption">
+            <strong>Đạo diễn ảnh của em 📸</strong>
+            <span>Anh thích nhìn em vui vẻ trong những khoảnh khắc rất đời thường. Có khi điều đáng nhớ nhất không phải bức ảnh hoàn hảo, mà là người đứng sau máy ảnh luôn muốn lưu giữ nụ cười của em.</span>
+          </div>
+        </article>
+        <article class="zoo-memory-card">
+          <img src="assets/memory-10.jpg" alt="Gia Hân ôm tượng ngựa vằn trong khuôn viên xanh">
+          <div class="zoo-memory-caption">
+            <strong>Ôm một chút, vui cả ngày 🦓</strong>
+            <span>Một cái ôm đáng yêu giữa khu vườn xanh. Mong rằng sau này, khi xem lại tấm hình này, em vẫn nhớ hôm ấy chúng mình đã cười vui và vô tư đến thế nào.</span>
+          </div>
+        </article>
+        <article class="zoo-memory-card">
+          <img src="assets/memory-11.jpg" alt="Phú tạo dáng bên tượng rồng tại Thảo Cầm Viên">
+          <div class="zoo-memory-caption">
+            <strong>Anh cũng phải có ảnh kỷ niệm chứ 🐉</strong>
+            <span>Hôm ấy em có những tấm hình xinh xắn, còn anh cũng tranh thủ tạo dáng một chút. Thanh xuân của chúng mình đâu cần lúc nào cũng thật nghiêm túc — vui vẻ bên nhau là đủ.</span>
+          </div>
+        </article>
+        <article class="zoo-memory-card">
+          <img src="assets/memory-12.jpg" alt="Hai người nắm tay nhau đi giữa con đường rợp bóng cây">
+          <div class="zoo-memory-caption">
+            <strong>Nắm tay em đi qua những ngày xanh 🌿</strong>
+            <span>Có những bức ảnh chẳng cần thấy rõ gương mặt, vì chỉ một bàn tay đang nắm lấy nhau cũng kể được câu chuyện. Anh mong mình sẽ còn được đồng hành cùng em qua thật nhiều con đường.</span>
+          </div>
+        </article>
+      </div>
+      <div class="zoo-memory-note">
+        “Ngày 23 tháng 10 năm 2026 — thêm một trang nhỏ trong câu chuyện của chúng mình. Cảm ơn em vì đã cùng anh tạo nên những kỷ niệm đáng yêu như thế này. Anh mong cuốn nhật ký của Phú và Hân sẽ còn dài thật dài, với nhiều chuyến đi, nhiều tiếng cười và thật nhiều ngày được nắm tay nhau.” 💗
+      </div>
+    </div>
+  </section>
+
+
+  <section id="loi-hua-han">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Một điều anh muốn cất giữ thật lâu</div>
+        <h2>Lời hứa của Gia Hân 💌</h2>
+        <p>Có những điều trở nên đặc biệt không phải vì được viết bằng những lời hoa mỹ, mà vì đó là lời thật lòng của người mình thương.</p>
+      </div>
+      <div class="promise-keepsake">
+        <div class="promise-keepsake-photo">
+          <img src="assets/memory-13.jpg" alt="Trang sổ ghi lời hứa của Gia Hân, bên cạnh là tấm ảnh kỷ niệm của hai người">
+        </div>
+        <div class="promise-keepsake-copy">
+          <div class="handwritten-label">A little promise from Hân</div>
+          <h3>Những lời em viết, anh muốn giữ lại</h3>
+          <p>Gia Hân à, anh muốn cất giữ khoảnh khắc này như một món quà nhỏ của tình yêu chúng mình. Không phải vì mọi lời hứa đều dễ dàng thực hiện, mà vì anh biết đằng sau nét chữ ấy là tình cảm và mong muốn cùng nhau cố gắng.</p>
+          <p>Anh sẽ trân trọng lời hứa của em, cũng như trân trọng chính em. Mình không cần phải hoàn hảo, chỉ cần thật lòng, biết lắng nghe, biết xin lỗi khi sai và cùng nhau sửa đổi bằng hành động.</p>
+          <p>Mong rằng sau này, khi nhìn lại trang sổ này, chúng mình sẽ mỉm cười vì đã không chỉ hứa với nhau những điều đẹp đẽ, mà còn từng ngày cố gắng để biến chúng thành sự thật.</p>
+          <div class="promise-keepsake-sign">Phú ♡ Hân · 25.05.2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tuong-lai">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Tương lai anh mong</div>
+        <h2>Phú muốn cùng Hân viết tiếp một câu chuyện thật đẹp</h2>
+        <p>Không chỉ là thích nhau trong những ngày vui. Anh mong mình đủ kiên nhẫn để đi cùng nhau qua cả những ngày chưa hoàn hảo.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Hôm nay — bắt đầu bằng sự chân thành</h3>
+          <p>Anh chủ động nhận lỗi, nhìn lại bản thân và không xem nhẹ những vết buồn mà em đã phải mang.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Ngày mai — thay đổi bằng hành động</h3>
+          <p>Không chỉ nói hay. Anh muốn những điều nhỏ mỗi ngày sẽ là bằng chứng rằng anh thật sự đang cố gắng vì em.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Những tháng ngày sau — cùng trưởng thành</h3>
+          <p>Anh muốn học cách sống có trách nhiệm hơn, làm việc nghiêm túc hơn và trở thành một người có thể cùng em xây dựng một cuộc sống ổn định.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Một ngày nào đó — nhìn lại và mỉm cười</h3>
+          <p>Anh hy vọng sẽ có một ngày, khi nhớ về hôm nay, chúng mình có thể mỉm cười vì đã không bỏ cuộc với tình yêu này.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="thiep-cuoi-tuong-lai" class="future-wedding-section">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Một giấc mơ anh muốn cùng em viết tiếp</div>
+        <h2>Thiệp cưới của Phú &amp; Hân trong tương lai 💍</h2>
+        <p>Hôm nay mình cất giữ tấm thiệp này như một lời nhắc dịu dàng về tương lai mà hai đứa mong muốn. Ngày cưới và địa điểm sẽ do chúng mình cùng chọn khi thật sự sẵn sàng.</p>
+      </div>
+      <div class="wedding-wrap">
+        <div class="wedding-card" id="weddingCard">
+          <div class="wedding-cover">
+            <div class="wedding-frame">
+              <div class="wedding-eyebrow">A promise for our tomorrow</div>
+              <div class="wedding-monogram">P <span>♡</span> H</div>
+              <div class="wedding-flower">❦ ❦ ❦</div>
+              <h3>Lê Quang Phú<br><i>&amp;</i><br>Trần Gia Hân</h3>
+              <div class="wedding-subtitle">THIỆP CƯỚI TƯƠNG LAI</div>
+              <div class="wedding-date">Một ngày đẹp trời — khi chúng mình đã sẵn sàng</div>
+              <button class="wedding-open-btn" type="button" id="openWeddingCard">Mở tấm thiệp mơ ước ♡</button>
+            </div>
+          </div>
+          <div class="wedding-inside">
+            <div class="wedding-flower">❦ ♡ ❦</div>
+            <div class="wedding-kicker">Trân trọng kính mời</div>
+            <h3>Phú &amp; Hân</h3>
+            <p>Với tình yêu và lòng biết ơn dành cho gia đình, bạn bè — những người đã yêu thương và đồng hành cùng chúng mình —</p>
+            <p>chúng mình mong một ngày nào đó sẽ được chia sẻ niềm hạnh phúc trong ngày đặc biệt nhất của hai đứa.</p>
+            <div class="wedding-details">
+              Ngày vui: ... / ... / ......<br>
+              Thời gian: Sẽ được hai đứa cùng chọn<br>
+              Địa điểm: Nơi chúng mình gọi là nhà
+            </div>
+            <p>Ngày bắt đầu câu chuyện: <strong>25 · 05 · 2025</strong></p>
+            <p>“Mong được cùng nhau đi qua những ngày bình thường, để rồi một ngày nhìn lại, chúng mình biết rằng đã xây nên một mái ấm bằng sự chân thành.”</p>
+            <button class="wedding-close-btn" type="button" id="closeWeddingCard">Gấp thiệp lại ♡</button>
+          </div>
+        </div>
+        <p class="wedding-note">Lưu ý: Đây là thiệp cưới ý tưởng dành cho tương lai, chưa phải lời mời cho một ngày cưới đã ấn định. Ngày giờ và địa điểm vẫn để trống để Phú và Hân cùng quyết định sau này.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="thu-bi-mat" class="envelope-section">
+    <div class="section-inner reveal">
+      <div class="section-head">
+        <div class="kicker">Chỉ dành riêng cho Gia Hân</div>
+        <h2>Thư bí mật — một điều anh cất riêng cho em 💌</h2>
+        <p>Trước khi mở lá thư, em hãy nhập ngày mà câu chuyện của chúng mình bắt đầu. Có những con số với người khác chỉ là một ngày, nhưng với anh, đó là ngày thế giới của anh có thêm em.</p>
+      </div>
+      <div class="secret-lock-card" id="secretLockCard">
+        <div class="secret-lock-icon">🔐</div>
+        <h3>Chiếc khóa nhỏ của hai đứa mình</h3>
+        <p class="secret-lock-copy">Anh chọn mật khẩu là ngày chúng ta chính thức yêu nhau — đủ để em nhớ, và đủ đặc biệt để mở cánh cửa này.</p>
+        <label for="secretPassword">Mật khẩu gồm 8 chữ số</label>
+        <div class="secret-input-row">
+          <input id="secretPassword" type="password" inputmode="numeric" autocomplete="off" maxlength="8" pattern="[0-9]{8}" placeholder="Nhập mật khẩu 8 số" aria-describedby="secretHint secretError">
+          <button id="unlockSecretLetter" type="button">Mở thư ♡</button>
+        </div>
+        <p class="secret-hint" id="secretHint">Gợi ý: ngày chúng ta yêu nhau — nhập theo dạng DDMMYYYY.</p>
+        <p class="secret-error" id="secretError" role="status" aria-live="polite"></p>
+      </div>
+      <div class="envelope-wrap secret-letter-content" id="secretLetterContent" hidden>
+        <div class="secret-unlocked-note">Mở khóa thành công — lá thư này là dành cho em, Hân à 💙</div>
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Mở hoặc đóng phong thư">
+          <div class="envelope-back"></div>
+          <div class="envelope-letter">
+            <h3>Gửi Gia Hân của anh,</h3>
+            <p>Nếu em đã mở được lá thư này, chắc em cũng nhớ ngày 25/05/2025 — ngày mà hai đứa mình bắt đầu gọi nhau bằng một cái tên thật đặc biệt: người yêu. Anh không biết tương lai sẽ đưa chúng mình đi qua những điều gì, nhưng anh biết ngày ấy đã trở thành một dấu mốc mà anh muốn gìn giữ thật lâu.</p>
+            <p>Hân à, anh xin lỗi vì những lần anh chưa đủ tốt, vì có những lúc anh để cảm xúc của mình đi trước sự thấu hiểu, và vì có thể anh đã khiến em buồn trong khi điều em cần chỉ là được lắng nghe, được quan tâm và được cảm nhận rằng mình quan trọng. Anh không mong em đọc những dòng này rồi phải quên ngay chuyện cũ. Anh chỉ mong anh có cơ hội sửa đổi bằng hành động, để em không phải chỉ tin vào lời nói.</p>
+            <p>Cảm ơn em vì đã cùng anh đi qua những ngày vừa qua. Cảm ơn những cái nắm tay, những buổi đi chơi, những tấm ảnh có thể sau này nhìn lại sẽ khiến cả hai bật cười, và cả những điều bình thường mà khi có em lại trở nên đáng nhớ. Có lẽ anh chưa nói cảm ơn đủ nhiều, nhưng anh thật sự trân trọng thời gian, sự quan tâm và tình cảm em đã dành cho anh.</p>
+            <p>Anh chọn màu xanh cho trang web này vì đó là màu em thích. Anh muốn màu xanh ở đây giống như một lời nhắn dịu dàng: anh có nhớ những điều thuộc về em, kể cả những điều nhỏ xíu. Màu xanh khiến anh nghĩ đến sự bình yên, hy vọng và một bầu trời rộng mở. Anh mong tình yêu của chúng mình cũng có được sự bình yên ấy — nơi cả hai có thể nói thật lòng, được lắng nghe và cùng nhau trưởng thành.</p>
+            <p>Anh hứa sẽ cố gắng yêu em bằng những điều cụ thể: hỏi han và lắng nghe nhiều hơn, không xem nhẹ cảm xúc của em, chủ động giải quyết những hiểu lầm, biết nhận lỗi khi sai và không để em phải một mình gánh lấy những chuyện thuộc về cả hai. Anh cũng sẽ nghiêm túc với việc học tập, công việc và tương lai của mình, để từng bước trở thành người có trách nhiệm hơn. Anh không hứa rằng mọi ngày đều hoàn hảo, nhưng anh muốn mỗi ngày đều có sự cố gắng chân thành.</p>
+            <p>Nếu có lúc chúng mình phải xa nhau, anh mong khoảng cách không khiến em cảm thấy bị bỏ quên. Anh sẽ cố gắng dành thời gian, chia sẻ cuộc sống và cùng em giữ gìn niềm tin. Anh muốn chúng mình vẫn có thể kể nhau nghe những chuyện nhỏ nhất trong ngày, cùng vui trước những điều tốt đẹp và cùng tìm cách vượt qua những ngày khó khăn. Anh biết lời hứa chỉ có ý nghĩa khi được thực hiện, nên anh muốn để thời gian trả lời thay cho những lời hoa mỹ.</p>
+            <p>Anh không viết lá thư này để yêu cầu em phải tha thứ ngay, cũng không muốn em cảm thấy có trách nhiệm phải làm anh vui. Em có quyền có cảm xúc của riêng mình, có quyền cần thời gian và có quyền nói cho anh biết điều gì khiến em tổn thương. Anh muốn học cách lắng nghe điều đó với sự tôn trọng. Anh mong tình yêu của chúng mình là nơi cả hai được là chính mình, chứ không phải nơi ai đó phải im lặng để giữ hòa khí.</p>
+            <p>Gia Hân à, nếu sau này chúng mình nhìn lại trang web này, anh mong sẽ thấy những lời xin lỗi đã trở thành sự trưởng thành, những lời cảm ơn đã trở thành sự quan tâm, và những lời hứa đã trở thành ký ức đẹp vì cả hai đã cùng nhau cố gắng. Anh muốn được cùng em đi thêm nhiều nơi, chụp thêm thật nhiều ảnh, nắm tay em qua những con đường xanh và từng bước xây dựng một tương lai mà cả hai đều cảm thấy hạnh phúc.</p>
+            <p style="margin-bottom:0"><strong>Anh thương em. Cảm ơn em vì đã là Gia Hân — người con gái có màu xanh yêu thích mà anh muốn ghi nhớ, có những ước mơ anh muốn cổ vũ và có một vị trí rất riêng trong câu chuyện tuổi trẻ của anh. Anh xin lỗi, anh biết ơn em, và anh sẽ cố gắng để tình yêu này được nhìn thấy qua hành động mỗi ngày. Không cần phải hoàn hảo, chỉ mong chúng mình luôn chân thành với nhau. ♡</strong></p>
+            <div class="signature">Mãi trân trọng em,<br><strong>Phú ♡</strong><br><span style="font:normal .92rem 'Segoe UI',sans-serif;color:#507e9b">25/05/2025 — ngày câu chuyện của chúng mình bắt đầu</span></div>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+        </div>
+        <div class="tap-hint">Chạm vào phong thư để mở / đóng lá thư 💌</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="final-card reveal">
+      <div class="final-heart">💖</div>
+      <div class="kicker">Một điều cuối cùng</div>
+      <h2 style="max-width:760px; margin-left:auto; margin-right:auto">Phú không xin Hân tin vào lời hứa ngay hôm nay — anh chỉ mong em nhìn thấy anh sẽ cố gắng thật lòng từ ngày mai.</h2>
+      <p>Anh biết tình yêu không được giữ bằng những câu nói hoa mỹ, mà được giữ bằng sự tử tế, bằng cách mình đối xử với nhau và bằng việc không ngừng học cách làm nhau hạnh phúc. Anh cảm ơn em vì đã bước vào cuộc sống của anh. Anh xin lỗi vì những điều chưa tốt. Và anh hứa, nếu còn cơ hội, anh sẽ yêu em bằng phiên bản tốt hơn của chính mình.</p>
+      <button class="btn primary" id="surpriseBtn" style="margin-top:24px">Nhấn vào đây nếu Hân muốn nghe thêm ♡</button>
+      <div id="surprise">
+        Cảm ơn em vì đã đọc đến đây. Nếu trái tim em vẫn còn một chút dịu dàng dành cho anh, anh sẽ trân trọng điều đó hơn tất cả. Anh không muốn chỉ là người yêu em trong những ngày vui, anh muốn là người cùng em đi qua cả những ngày mệt mỏi, khó khăn, và vẫn nắm tay nhau thật chặt. Anh thương em — nhiều hơn những gì vài dòng chữ có thể kể hết. 💌
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>Phú ♡ Hân · Yêu nhau từ 25/05/2025 · Viết bằng sự chân thành, dịu dàng và lời hứa yêu thương</footer>
+
+<script>
+const loader = document.getElementById('loader');
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    loader.classList.add('hide');
+    document.body.classList.remove('no-scroll');
+  }, 2900);
+});
+
+const startDate = new Date('2025-05-25T00:00:00');
+const now = new Date();
+const diffDays = Math.max(0, Math.floor((now - startDate) / (1000*60*60*24)));
+document.getElementById('daysLove').textContent = diffDays;
+document.getElementById('counterDays').textContent = diffDays;
+
+const glow = document.getElementById('glow');
+window.addEventListener('pointermove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+const fxLayer = document.getElementById('fx-layer');
+function makeParticle() {
+  const el = document.createElement('span');
+  el.className = 'particle';
+  el.textContent = Math.random() > .3 ? '♥' : (Math.random() > .5 ? '♡' : '✦');
+  el.style.left = Math.random() * 100 + '%';
+  el.style.fontSize = (14 + Math.random() * 26) + 'px';
+  el.style.animationDuration = (7 + Math.random() * 8) + 's';
+  el.style.opacity = (.4 + Math.random() * .4).toFixed(2);
+  fxLayer.appendChild(el);
+  setTimeout(() => el.remove(), 16000);
+}
+for(let i=0;i<18;i++) setTimeout(makeParticle, i * 250);
+setInterval(makeParticle, 650);
+
+const sparkleLayer = document.getElementById('sparkle-layer');
+function sparkleBurst(x, y, count = 16){
+  for(let i=0; i<count; i++){
+    const s = document.createElement('span');
+    s.className = 'spark';
+    s.style.left = x + 'px';
+    s.style.top = y + 'px';
+    s.style.setProperty('--tx', (Math.random()*100 - 50) + 'px');
+    s.style.setProperty('--ty', (Math.random()*100 - 50) + 'px');
+    sparkleLayer.appendChild(s);
+    setTimeout(()=>s.remove(), 900);
+  }
+}
+window.addEventListener('click', e => sparkleBurst(e.clientX, e.clientY, 12));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.photo-slot input').forEach(input => {
+  input.addEventListener('change', () => {
+    const file = input.files && input.files[0];
+    if(!file || !file.type.startsWith('image/')) return;
+    const slot = input.closest('.photo-slot');
+    const img = slot.querySelector('img');
+    const reader = new FileReader();
+    reader.onload = () => {
+      img.src = reader.result;
+      slot.classList.add('has-image');
+      sparkleBurst(window.innerWidth/2, window.innerHeight/2, 24);
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
+const surpriseBtn = document.getElementById('surpriseBtn');
+const surprise = document.getElementById('surprise');
+surpriseBtn.addEventListener('click', () => {
+  surprise.classList.toggle('show');
+  if(surprise.classList.contains('show')){
+    surpriseBtn.textContent = 'Gửi Hân một cái ôm thật dịu dàng ♡';
+    sparkleBurst(window.innerWidth/2, window.innerHeight/2, 28);
+  } else {
+    surpriseBtn.textContent = 'Nhấn vào đây nếu Hân muốn nghe thêm ♡';
+  }
+});
+
+const envelope = document.getElementById('envelope');
+if(envelope){
+  function toggleEnvelope(){
+    envelope.classList.toggle('open');
+    sparkleBurst(window.innerWidth/2, envelope.getBoundingClientRect().top + 140, 20);
+  }
+  envelope.addEventListener('click', toggleEnvelope);
+  envelope.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter' || event.key === ' '){
+      event.preventDefault();
+      toggleEnvelope();
+    }
+  });
+}
+
+const typedLead = document.getElementById('typedLead');
+const leadText = typedLead.textContent.trim();
+typedLead.textContent = '';
+let index = 0;
+function typeWriter(){
+  if(index < leadText.length){
+    typedLead.textContent += leadText.charAt(index);
+    index++;
+    setTimeout(typeWriter, 28);
+  }
+}
+setTimeout(typeWriter, 3300);
+
+const starCanvas = document.getElementById('star-layer');
+const ctx = starCanvas.getContext('2d');
+let stars = [];
+function resizeCanvas(){
+  starCanvas.width = window.innerWidth;
+  starCanvas.height = window.innerHeight;
+  stars = Array.from({length: Math.min(90, Math.floor(window.innerWidth / 14))}, () => ({
+    x: Math.random() * starCanvas.width,
+    y: Math.random() * starCanvas.height,
+    r: Math.random() * 1.6 + .3,
+    a: Math.random() * .6 + .15,
+    s: Math.random() * .015 + .005
+  }));
+}
+function drawStars(){
+  ctx.clearRect(0,0,starCanvas.width, starCanvas.height);
+  stars.forEach(star => {
+    star.a += star.s;
+    if(star.a > .8 || star.a < .15) star.s *= -1;
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.r, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(255,255,255,${star.a})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(drawStars);
+}
+resizeCanvas();
+drawStars();
+window.addEventListener('resize', resizeCanvas);
+
+const fxBtn = document.getElementById('fxBtn');
+let fxOn = false;
+fxBtn.addEventListener('click', () => {
+  fxOn = !fxOn;
+  if(fxOn){
+    fxBtn.textContent = '💖 Cảm xúc đang bật';
+    for(let i=0;i<36;i++){
+      setTimeout(() => sparkleBurst(Math.random()*window.innerWidth, Math.random()*window.innerHeight, 8), i*80);
+    }
+  }else{
+    fxBtn.textContent = '✨ Bật hiệu ứng';
+  }
+});
+
+const weddingCard = document.getElementById('weddingCard');
+const openWeddingCard = document.getElementById('openWeddingCard');
+const closeWeddingCard = document.getElementById('closeWeddingCard');
+if(weddingCard && openWeddingCard && closeWeddingCard){
+  openWeddingCard.addEventListener('click', () => {
+    weddingCard.classList.add('is-open');
+    sparkleBurst(window.innerWidth/2, window.innerHeight/2, 24);
+  });
+  closeWeddingCard.addEventListener('click', () => {
+    weddingCard.classList.remove('is-open');
+    sparkleBurst(window.innerWidth/2, window.innerHeight/2, 12);
+    weddingCard.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+}
+
+
+const secretPasswordInput = document.getElementById('secretPassword');
+const unlockSecretLetter = document.getElementById('unlockSecretLetter');
+const secretError = document.getElementById('secretError');
+const secretLetterContent = document.getElementById('secretLetterContent');
+function unlockPrivateLetter(){
+  const entered = (secretPasswordInput.value || '').trim();
+  if(!/^\d{8}$/.test(entered)){
+    secretError.textContent = 'Em nhập đủ 8 chữ số nha 💙';
+    secretPasswordInput.focus();
+    return;
+  }
+  if(entered !== '25052025'){
+    secretError.textContent = 'Chưa đúng rồi em ơi. Hãy nhớ ngày chúng ta chính thức yêu nhau nhé 💌';
+    secretPasswordInput.select();
+    return;
+  }
+  secretError.textContent = '';
+  secretLetterContent.hidden = false;
+  document.getElementById('secretLockCard').classList.add('secret-unlocked');
+  unlockSecretLetter.textContent = 'Đã mở khóa 💙';
+  unlockSecretLetter.disabled = true;
+  secretPasswordInput.disabled = true;
+  sparkleBurst(window.innerWidth/2, window.innerHeight/2, 30);
+  setTimeout(() => secretLetterContent.scrollIntoView({behavior:'smooth',block:'center'}), 180);
+}
+if(secretPasswordInput && unlockSecretLetter){
+  unlockSecretLetter.addEventListener('click', unlockPrivateLetter);
+  secretPasswordInput.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter') unlockPrivateLetter();
+  });
+  secretPasswordInput.addEventListener('input', () => {
+    secretPasswordInput.value = secretPasswordInput.value.replace(/\D/g,'').slice(0,8);
+    secretError.textContent = '';
+  });
+}
+
+
+// Official recording by Khắc Hưng, streamed with YouTube's embedded player.
+(function(){
+  const toggle = document.getElementById('loveSongToggle');
+  const panel = document.getElementById('loveSongPanel');
+  const close = document.getElementById('loveSongClose');
+  const video = document.getElementById('loveSongVideo');
+  if(!toggle || !panel || !close || !video) return;
+  const officialEmbed = 'https://www.youtube-nocookie.com/embed/mwVLTHsp0Qg?autoplay=1&playsinline=1&rel=0';
+  function openSong(){
+    if(!video.querySelector('iframe')){
+      const frame = document.createElement('iframe');
+      frame.title = 'Anh Sẽ Luôn Thật Gần — Khắc Hưng (YouTube)';
+      frame.src = officialEmbed;
+      frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.allowFullscreen = true;
+      video.appendChild(frame);
+    }
+    panel.hidden = false;
+    toggle.setAttribute('aria-expanded','true');
+    toggle.textContent = '💗 Đang mở bài hát';
+  }
+  function closeSong(){
+    panel.hidden = true;
+    toggle.setAttribute('aria-expanded','false');
+    toggle.textContent = '🎵 Anh Sẽ Luôn Thật Gần';
+    // Removing iframe also stops audio when the user closes the panel.
+    video.textContent = '';
+  }
+  toggle.addEventListener('click', () => panel.hidden ? openSong() : closeSong());
+  close.addEventListener('click', closeSong);
+  document.addEventListener('keydown', e => {if(e.key === 'Escape' && !panel.hidden) closeSong()});
+})();
+
+</script>
+</body>
+</html>
